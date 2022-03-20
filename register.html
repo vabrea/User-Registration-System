@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="CSS/mystyle.css">
+    <title>Register</title>
+  </head>
+  <body>
+        <header>
+            <nav>
+            <a href="index.html">Home</a>
+            <a href="register.html">Register</a>
+            </nav>
+            <h1>My Awesome Registration System</h1>
+        </header>
+    <main>
+      <form action="#">
+    <div class="form-container">
+        <h2>Create a New Account</h2>
+        <div class="input-container">
+          <input type="text" id="txtFirstName" placeholder="First Name">
+        </div>
+
+        <div class="input-container">
+          <input type="text" id="txtLastName" placeholder="Last Name">
+        </div>
+
+        <div class="input-container">
+          <input type="email" id="txtEmail" placeholder="Email">
+        </div>
+
+        <div class="input-container">
+          <input type="password" id="txtPassword" placeholder="Password">
+        </div>
+
+        <div class="input-container">
+          <input type="number" id="txtAge" placeholder="Age">
+        </div>
+
+        <div class="input-container">
+          <input type="text" id="txtAddress" placeholder="Address">
+        </div>
+
+        <div class="input-container">
+          <input
+            type="text" id="txtCardNumber" placeholder="Credit Card Number">
+        </div>
+
+        <div class="input-container">
+          <input type="tel" id="txtPhone" placeholder="Phone Number">
+        </div>
+
+        <div class="input-container">
+          <input type="color" id="txtColor" placeholder="Color">
+        </div>
+        <button onclick="register();">Register</button>
+    </div>
+      </form>
+    </main>
+    <script src="scripts/register.js"></script>
+  </body>
+</html>
