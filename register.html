@@ -5,21 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="CSS/mystyle.css">
+    <link rel="stylesheet" href="Styles/mystyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Oswald:wght@200;300;500&family=Poppins:ital,wght@0,100;0,200;0,300;1,200&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
     <title>Register</title>
   </head>
-  <body>
+  <body class="reg-body">
         <header>
-            <nav>
-            <a href="index.html">Home</a>
-            <a href="register.html">Register</a>
+            <nav class="nav-bar">
+            <a class="links" href="index.html">Home</a>
+            <a class="links" href="register.html">Register</a>
+            <a class="links" href="users.html">Users</a>
             </nav>
             <h1>My Awesome Registration System</h1>
         </header>
     <main>
       <form action="#">
-    <div class="form-container">
+      <div class="form-container">
         <h2>Create a New Account</h2>
+
+        <p id="alertError" class="alert-error hide">
+          *Please complete highlighted fields
+        </p>
+
         <div class="input-container">
           <input type="text" id="txtFirstName" placeholder="First Name">
         </div>
@@ -56,10 +65,13 @@
         <div class="input-container">
           <input type="color" id="txtColor" placeholder="Color">
         </div>
-        <button onclick="register();">Register</button>
-    </div>
+      </div>
       </form>
+      <div class="reg-btn">
+      <button onclick="register();">Register</button>
+      </div>
     </main>
-    <script src="scripts/register.js"></script>
+    <script src="Scripts/storeManager.js"></script>
+    <script src="Scripts/register.js"></script>
   </body>
 </html>

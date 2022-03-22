@@ -17,37 +17,47 @@ class User {
 
 function isValid(aUser){
     let valid=true;
-    if(aUser.firstName.length==0){
-        valid=false;
-        console.log("Invalid First Name");
-    }
-    if(aUser.lastName.length==0){
-        valid=false;
-        console.log("Invalid Last Name");
-    }
+    $("input").removeClass("input-error")
+    // if(aUser.firstName.length==0){
+    //     valid=false;
+    //     console.log("Invalid First Name");
+    // }
+    // if(aUser.lastName.length==0){
+    //     valid=false;
+    //     console.log("Invalid Last Name");
+    // }
     if(aUser.email.length==0){
         valid=false;
-        console.log("Invalid Email");
+        $(`#txtEmail`).addClass("input-error");
     }
-    if(aUser.password.length==0){
+    if(aUser.password.length<=5){
         valid=false;
-        console.log("Invalid Password");
+        $(`#txtPassword`).addClass("input-error");
+        alert("Password must be 6 characters or more")
     }
-    if(aUser.age.length==0){
-        valid=false;
-        console.log("Invalid Age");
-    }
-    if(aUser.address.length==0){
-        valid=false;
-        console.log("Invalid Address");
-    }
-    if(aUser.cardNumber.length==0){
-        valid=false;
-        console.log("Invalid Card Number");
-    }
-    if(aUser.contactPhone.length==0){
-        valid=false;
-        console.log("Invalid Phone");
+    // if(aUser.age.length==0){
+    //     valid=false;
+    //     console.log("Invalid Age");
+    // }
+    // if(aUser.address.length==0){
+    //     valid=false;
+    //     console.log("Invalid Address");
+    // }
+    // if(aUser.cardNumber.length==0){
+    //     valid=false;
+    //     console.log("Invalid Card Number");
+    // }
+    // if(aUser.contactPhone.length==0){
+    //     valid=false;
+    //     console.log("Invalid Phone");
+    // }
+
+    if(!valid){
+        console.error("Missing Data");
+        $("#alertError").removeClass("hide")
+        setTimeout(function(){
+            $("#alertError").addClass("hide");
+        },3000);
     }
     return valid;
 }
@@ -67,11 +77,12 @@ function register(){
     //create theUser
    let theUser= new User(inputFirstName,inputLastName,inputEmail,inputPassword,inputAge,inputAddress,inputCardNumber,inputPhone,inputColor);
    //validate the user
-    if(isValid(theUser));
-   console.log(theUser);
-
+    if(isValid(theUser)){
+    saveUser(theUser);
+    $("input").val("");
+    }
    //clear the inputs
-   $("input").val("");
+   
 }
 
 
