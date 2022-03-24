@@ -1,5 +1,5 @@
 var userList = [];
-
+let y=0
 class User {
     constructor(firstName, lastName, email, password, age, address, cardNumber, phone, color) {
         this.firstName = firstName;
@@ -11,6 +11,7 @@ class User {
         this.cardNumber = cardNumber;
         this.contactPhone = phone;
         this.color = color;
+        this.id=y++;
 
     }
 }
@@ -30,11 +31,13 @@ function isValid(aUser){
         valid=false;
         $(`#txtEmail`).addClass("input-error");
     }
-    if(aUser.password.length<=5){
+    if(aUser.password.length==0){
         valid=false;
         $(`#txtPassword`).addClass("input-error");
-        alert("Password must be 6 characters or more")
+        
     }
+
+
     // if(aUser.age.length==0){
     //     valid=false;
     //     console.log("Invalid Age");
@@ -53,15 +56,30 @@ function isValid(aUser){
     // }
 
     if(!valid){
-        console.error("Missing Data");
-        $("#alertError").removeClass("hide")
-        setTimeout(function(){
-            $("#alertError").addClass("hide");
-        },3000);
+        displayError("Missing Data")
     }
     return valid;
 }
 
+function validatePass(){
+    let txtPass =$("#txtPassword");
+    let password=txtPass.val();
+    if(password.length<6){
+        txtPass.css("border","2px solid red"); 
+        displayError("Password is too short")
+    }else{
+        txtPass.css("border","2px solid green")
+        hideError();
+    }
+}
+
+function displayError(msg){
+    $("#alertError").removeClass("hide").text(msg);
+}
+
+function hideError(){
+    $("#alertError").addClass("hide");
+}
 
 function register(){
     let inputFirstName = $("#txtFirstName").val();
@@ -89,6 +107,6 @@ function register(){
 function init(){
     console.log("Registration")
     //hook events
-
+    $("#txtPassword").change(validatePass);
 }
 window.onload=init;

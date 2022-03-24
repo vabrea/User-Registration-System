@@ -29,12 +29,16 @@ nav{
 .nav-bar{
     flex:1 1 200px;
  }
+
+ .nav-bar2{
+    flex:1 1 200px;
+ }
  .links {
     display: inline-block;
     text-align: center;
     padding: 14px;
     color: rgb(255, 255, 255);
-    text-decoration: none;
+    text-decoration: none ;
     font-size: 24px;
     font-weight: bolder;
  }
@@ -48,6 +52,8 @@ nav{
      margin-top: 5rem;
      color: rgb(0, 0, 0);
  }
+
+
 
 .input-container{
     margin-top: 1rem;
@@ -91,10 +97,11 @@ button{
 }
 
 .input-error{
-    border: 1px solid red;
+    border: 2px solid red;
     background-color: rgb(224, 190, 190);
 }
 
 .hide{
     display: none;
 }
+
