@@ -12,7 +12,6 @@ function saveUser(user){
 
 function readUsers(){
     let data= localStorage.getItem(LS_KEY);
-    console.log(data);
     if(!data){
         return [];
     }else{
